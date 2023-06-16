@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sutter Edits</title>
+  <link rel="stylesheet" href="/ew.css">
+</head>
+<body>
+  <header>
+    <div class="header">
+      <h1  id="heading">Shutter Edits</h1>
+      </div>
+  </header>
+  <div class="imagecontainer">
+  <img id="img" src="/default.png" width="auto" height="auto" >
+</div>
+<div class="inputs">
+  <input type="file" id="file" accept="image/jpeg, image/png, image/jpg" onchange="refresh()">
+  <a href="/Sample.jpg" download>Download</a>
+    
+</div>
+<div class="ranges">
+<div class="subranges">
+  <label>Blur</label>
+	<input id="blur" type="range" min="0" max="100" value="0" step="1" onchange="applyFilter()" data-filter="blur" data-scale="px"><br>
+  </div>
+  <div class="subranges">
+	<label>Brightness</label>
+  
+	<input type="range" min="0" max="200" value="100" step="0.1" onchange="applyFilter()" data-filter="brightness" data-scale="%"><br>
+  </div>
+  <div class="subranges">
+	<label>Contrast</label>
+	<input type="range" min="0" max="200" value="100" step="0.1" onchange="applyFilter()" data-filter="contrast" data-scale="%"><br>
+  </div>
+  <div class="subranges">
+	<label>Grayscale</label>
+	<input type="range" min="0" max="100" value="0" step="1" onchange="applyFilter()" data-filter="grayscale" data-scale="%"><br>
+  </div>
+  <div class="subranges">
+  <label>Hue Rotate</label>
+	<input type="range" min="0" max="360" value="0" step="1" onchange="applyFilter()" data-filter="hue-rotate" data-scale="deg"><br>
+  </div>
+  <div class="subranges">
+  <label>Invert</label>
+	<input type="range" min="0" max="100" value="0" step="1" onchange="applyFilter()" data-filter="invert" data-scale="%"><br>
+  </div>
+  <div class="subranges">
+	<label>Opacity</label>
+	<input type="range" min="0" max="100" value="100" step="1" onchange="applyFilter()" data-filter="opacity" data-scale="%"><br>
+  </div>
+  <div class="subranges">
+	<label>Saturate</label>
+	<input type="range" min="1" max="10" value="1" step="0.1" onchange="applyFilter()" data-filter="saturate" data-scale=""><br>
+  </div>
+  <div class="subranges">
+
+  <label>Sepia</label>
+	<input type="range" min="0" max="100" value="0" step="1" onchange="applyFilter()" data-filter="sepia" data-scale="%"><br>
+</div>
+</div>
+<script src="ew.js">
+ 
+  </script>
+  
+</body>
+</html>
