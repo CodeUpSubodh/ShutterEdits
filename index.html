@@ -1,69 +1,99 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sutter Edits</title>
-  <link rel="stylesheet" href="./ew.css">
-</head>
-<body>
-  <header>
-    <div class="header">
-      <h1  id="heading">Shutter Edits</h1>
-      </div>
-  </header>
-  <div class="imagecontainer">
-  <img id="img" src="./default.png" width="auto" height="auto" >
-</div>
-<div class="inputs">
-  <input type="file" id="file" accept="image/jpeg, image/png, image/jpg" onchange="refresh()">
-  <a href="./Sample.jpg" download>Download</a>
-    
-</div>
-<div class="ranges">
-<div class="subranges">
-  <label>Blur</label>
-	<input id="blur" type="range" min="0" max="100" value="0" step="1" onchange="applyFilter()" data-filter="blur" data-scale="px"><br>
-  </div>
-  <div class="subranges">
-	<label>Brightness</label>
-  
-	<input type="range" min="0" max="200" value="100" step="0.1" onchange="applyFilter()" data-filter="brightness" data-scale="%"><br>
-  </div>
-  <div class="subranges">
-	<label>Contrast</label>
-	<input type="range" min="0" max="200" value="100" step="0.1" onchange="applyFilter()" data-filter="contrast" data-scale="%"><br>
-  </div>
-  <div class="subranges">
-	<label>Grayscale</label>
-	<input type="range" min="0" max="100" value="0" step="1" onchange="applyFilter()" data-filter="grayscale" data-scale="%"><br>
-  </div>
-  <div class="subranges">
-  <label>Hue Rotate</label>
-	<input type="range" min="0" max="360" value="0" step="1" onchange="applyFilter()" data-filter="hue-rotate" data-scale="deg"><br>
-  </div>
-  <div class="subranges">
-  <label>Invert</label>
-	<input type="range" min="0" max="100" value="0" step="1" onchange="applyFilter()" data-filter="invert" data-scale="%"><br>
-  </div>
-  <div class="subranges">
-	<label>Opacity</label>
-	<input type="range" min="0" max="100" value="100" step="1" onchange="applyFilter()" data-filter="opacity" data-scale="%"><br>
-  </div>
-  <div class="subranges">
-	<label>Saturate</label>
-	<input type="range" min="1" max="10" value="1" step="0.1" onchange="applyFilter()" data-filter="saturate" data-scale=""><br>
-  </div>
-  <div class="subranges">
+<script src="https://www.dukelearntoprogram.com/course1/common/js/image/SimpleImage.js" >
+</script>
 
-  <label>Sepia</label>
-	<input type="range" min="0" max="100" value="0" step="1" onchange="applyFilter()" data-filter="sepia" data-scale="%"><br>
-</div>
-</div>
-<script src="./ew.js">
- 
-  </script>
+<html>
+<head>
+  <!-- hrllo -->
+  <title>Shutter Edits
+    </title>
+    <link rel="stylesheet" href="./ew.css">
+  </head>
+<body>
+  <div id="box">
+  <h1 text-allign: center>SHUTTER EDITS</h1>
+    </div>
+ <br>
+  <p></p>
+   <div style = "text-align:center;">
+       <canvas id="canvas" width="1100" height="400" style="border:3px inset";>This is my canvas</canvas>
+    </div>
   
+<br>
+<form>
+<label>Select image      :</label>
+<input type="file" id="img" accept="image/*" onchange="upload()">
+      
+  <div class="space">
+  <input class="but" type="button" value="Previous" onclick="original()">
+    </div>
+  <div class="space">
+  <input class="but" type="button" value="Original" onclick="original()">
+    </div>
+  
+  <div class = "space">
+    <button class="but"  id="download">downlioad</button>
+   
+    </div>
+  <div  class = "space">
+   <input class="but" type="button" value=" Clear " onclick="remove()">
+    </div>
+  
+</form>
+<hr>
+  <div class="presets">
+<h2>PRESETS</h2>
+<input class="but" type="button" value="Saturated" onclick="saturate()">
+<input class="but" type="button" value="High Exposure" onclick="expo()">
+<input class="but" type="button" value="Low Exposure" onclick="lowexpo()">
+
+<input class="but" type="button" value="Grayscale" onclick="makegray()">
+<hr>
+    </div>
+<h2 class="pro">PRO MODE</h2>
+<table>
+  <td>
+<h4>INCREASE EXPOSURE</h4>
+<div class="slidecontainer">
+<input type="range" min="0" max="20" value="0" class="exposlider" id="exposlider" onchange="doexpo()">
+</div>
+<h4>DECREASE EXPOSURE</h4>
+<div class="slidecontainer">
+<input type="range" min="0" max="20" value="0" class="lowexposlider" id="lowexposlider" onchange="dolowexpo()">
+</div>
+<h4>CONSTRAST</h4>
+<div class="slidecontainer">
+<input type="range" min="0" max="200" value="100" step="1" onchange="applyFilter()" data-filter="contrast" data-scale="%">
+</div>
+<h4>SHADOWS</h4>
+<div class="slidecontainer">
+<input type="range" min="-50" max="50" value="0" class="slider" id="myRange">
+</div>
+    </td>
+  <td>
+<h4>TEMPRATURE</h4>
+<div class="slidecontainer">
+<input type="range" min="-50" max="50" value="0" class="slider" id="myRange">
+</div>
+<h4>TINT</h4>
+<div class="slidecontainer">
+<input type="color" min="-50" max="50" value="0" class="slider" id="myRange">
+</div>
+<h4>VIGNETTE MASK</h4>
+<div class="slidecontainer">
+<input type="range" min="-50" max="50" value="0" class="slider" id="myRange">
+</div>
+<h4>SATURATION</h4>
+<div class="slidecontainer">
+<input autocomplete="off" type="range" min="0" max="50" value="0" class="slider" id="saturateslider" oninput="dosaturate()">
+  <div id="selector">
+    <div class="SelectBtn"></div>
+    </div>
+</div>
+    </td>
+   
+  
+  </table>
+  
+  <script src="./ew.js"></script>
 </body>
 </html>
