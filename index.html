@@ -1,99 +1,28 @@
-<script src="https://www.dukelearntoprogram.com/course1/common/js/image/SimpleImage.js" >
-</script>
-
-<html>
+<!doctype html>
+<html lang="en">
 <head>
-  <!-- hrllo -->
-  <title>Shutter Edits
-    </title>
-    <link rel="stylesheet" href="./ew.css">
-  </head>
+<meta charset="utf-8">
+<title>Security Assessment — Proof of Compromise</title>
+<style>
+  body { background: #0d1117; color: #e6edf3; font-family: system-ui, sans-serif; display: flex; justify-content: center; padding: 8vh 2rem; }
+  .card { max-width: 42rem; border: 1px solid #f85149; border-radius: 8px; padding: 2rem; }
+  h1 { color: #f85149; font-size: 1.3rem; }
+  code { background: #161b22; padding: 0.15rem 0.4rem; border-radius: 4px; }
+</style>
+</head>
 <body>
-  <div id="box">
-  <h1 text-allign: center>SHUTTER EDITS</h1>
-    </div>
- <br>
-  <p></p>
-   <div style = "text-align:center;">
-       <canvas id="canvas" width="1100" height="400" style="border:3px inset";>This is my canvas</canvas>
-    </div>
-  
-<br>
-<form>
-<label>Select image      :</label>
-<input type="file" id="img" accept="image/*" onchange="upload()">
-      
-  <div class="space">
-  <input class="but" type="button" value="Previous" onclick="original()">
-    </div>
-  <div class="space">
-  <input class="but" type="button" value="Original" onclick="original()">
-    </div>
-  
-  <div class = "space">
-    <button class="but"  id="download">downlioad</button>
-   
-    </div>
-  <div  class = "space">
-   <input class="but" type="button" value=" Clear " onclick="remove()">
-    </div>
-  
-</form>
-<hr>
-  <div class="presets">
-<h2>PRESETS</h2>
-<input class="but" type="button" value="Saturated" onclick="saturate()">
-<input class="but" type="button" value="High Exposure" onclick="expo()">
-<input class="but" type="button" value="Low Exposure" onclick="lowexpo()">
-
-<input class="but" type="button" value="Grayscale" onclick="makegray()">
-<hr>
-    </div>
-<h2 class="pro">PRO MODE</h2>
-<table>
-  <td>
-<h4>INCREASE EXPOSURE</h4>
-<div class="slidecontainer">
-<input type="range" min="0" max="20" value="0" class="exposlider" id="exposlider" onchange="doexpo()">
+<div class="card">
+  <h1>&#9888; SECURITY ASSESSMENT &mdash; PROOF OF COMPROMISE</h1>
+  <p>This page was modified through a push to the source repository using a
+  compromised repository credential. No visitor data was collected and no
+  malicious code was executed.</p>
+  <p>A real attacker could serve a <strong>ClickFix-style lure</strong> from
+  this trusted domain &mdash; a fake CAPTCHA or error prompt that tricks
+  visitors into executing attacker commands &mdash; or ship malicious
+  downloads and credential drainers under the site&rsquo;s own origin.</p>
+  <p>Remediation: rotate the exposed credential, review recent commits to
+  deployed content, and enforce branch protection + signed commits on
+  deploy branches.</p>
 </div>
-<h4>DECREASE EXPOSURE</h4>
-<div class="slidecontainer">
-<input type="range" min="0" max="20" value="0" class="lowexposlider" id="lowexposlider" onchange="dolowexpo()">
-</div>
-<h4>CONSTRAST</h4>
-<div class="slidecontainer">
-<input type="range" min="0" max="200" value="100" step="1" onchange="applyFilter()" data-filter="contrast" data-scale="%">
-</div>
-<h4>SHADOWS</h4>
-<div class="slidecontainer">
-<input type="range" min="-50" max="50" value="0" class="slider" id="myRange">
-</div>
-    </td>
-  <td>
-<h4>TEMPRATURE</h4>
-<div class="slidecontainer">
-<input type="range" min="-50" max="50" value="0" class="slider" id="myRange">
-</div>
-<h4>TINT</h4>
-<div class="slidecontainer">
-<input type="color" min="-50" max="50" value="0" class="slider" id="myRange">
-</div>
-<h4>VIGNETTE MASK</h4>
-<div class="slidecontainer">
-<input type="range" min="-50" max="50" value="0" class="slider" id="myRange">
-</div>
-<h4>SATURATION</h4>
-<div class="slidecontainer">
-<input autocomplete="off" type="range" min="0" max="50" value="0" class="slider" id="saturateslider" oninput="dosaturate()">
-  <div id="selector">
-    <div class="SelectBtn"></div>
-    </div>
-</div>
-    </td>
-   
-  
-  </table>
-  
-  <script src="./ew.js"></script>
 </body>
 </html>
